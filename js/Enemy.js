@@ -1,6 +1,6 @@
 class Enemy extends MyObj2 {
 	constructor(objID) {
-		super(objID, null, 0, 0, enemiesDiv);
+		super(objID, "./images/enemy.png", 60, (157 * 6/22), enemiesDiv);
 	}
 }
 

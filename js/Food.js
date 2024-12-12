@@ -11,14 +11,14 @@ class Food extends MyObj2 {
 
 class RegularFood extends Food {
 	constructor(objID) {
-		super(objID, 0, 0, null);
+		super(objID, "./images/regularFood.png", 50, 50);
 		this.points = 500;
 	}
 }
 
 class SuperFood extends Food {
 	constructor(objID) {
-		super(objID, 0, 0, null);
+		super(objID, "./images/superFood.png", 75, 75);
 		this.points = 2500;
 	}
 }
