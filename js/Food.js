@@ -22,30 +22,3 @@ class SuperFood extends Food {
 		this.points = 2500;
 	}
 }
-
-foods = [];
-foodID = 0;
-function addFood() {
-	let newFood = (Math.random()<0.95) ? new RegularFood(foodID) : new SuperFood(foodID);
-	foods.push(newFood);
-
-	foodID++;
-}
-
-function removeFoods(...args) {
-	foods = foods.filter(function(food) {
-		let toRemove = false;
-		for (arg in args) {
-			if (food.ID == arg) {
-				toRemove = true;
-			}
-
-			if (toRemove == true) {
-				food.sprite.remove();
-				break;
-			}
-		}
-		
-		return !toRemove;
-	})
-}

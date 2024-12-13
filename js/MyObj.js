@@ -34,7 +34,10 @@ class MyObj {
 class MyObj2 extends MyObj {
     constructor(ID, imgSrc, imgWidth, imgHeight, div) {
         super(ID, imgSrc, imgWidth, imgHeight, div);
-        this.direction = null;
+
+        let angle = Math.random()*2*Math.PI;
+        this.direction = [Math.cos(angle), Math.sin(angle)];
+        this.speed = 1;
     }
 
     move() {
