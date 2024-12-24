@@ -12,13 +12,13 @@ class Food extends MyObj2 {
 class RegularFood extends Food {
 	constructor(objID) {
 		super(objID, "./images/regularFood.png", 50, 50);
-		this.points = 500;
+		this.points = 2500;
 	}
 }
 
 class SuperFood extends Food {
 	constructor(objID) {
 		super(objID, "./images/superFood.png", 75, 75);
-		this.points = 2500;
+		this.points = 10000;
 	}
 }

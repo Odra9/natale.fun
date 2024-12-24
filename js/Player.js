@@ -1,6 +1,6 @@
 class Player extends MyObj{
     constructor() {
-		super(0, "./images/player.png", 100, 100);
+		super(0, "./images/player.png", 200/2, 154/2);
 
         this.score = 0.0;
         this.health = 10;
@@ -11,7 +11,7 @@ class Player extends MyObj{
     }
 
     setScoreboard() {
-        scoreText.innerHTML =   "Score: " + this.score + "</br>" +
-                                "Health: " + this.health;
+        scoreText.innerHTML =   "Punteggio: " + this.score + "</br>" +
+                                "Salute: " + this.health;
     }
 }
