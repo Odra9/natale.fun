@@ -1,7 +1,15 @@
 const P = new Player();
-const movePlayer = function (event) {P.setPos([event.clientX, event.clientY]);}
-onmousemove = movePlayer;
-ontouchmove = movePlayer;
+const movePlayer = function (event) {
+	let newPos = [0, 0];
+	if (e.type == "mousemove") {
+		newPos = [event.clientX, event.clientY];
+	} else {
+		newPos = [event.touches[0].clientX, event.touches[0].clientY];
+	}
+	P.setPos([event.clientX, event.clientY]);
+}
+document.addEventListener('mousemove', movePlayer);
+document.addEventListener('touchmove', movePlayer);
 
 objs = [];
 let spawnID = 1, spawn = true;
