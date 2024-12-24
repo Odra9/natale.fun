@@ -1,15 +1,15 @@
 const P = new Player();
-/* const movePlayer = function (event) {
+const movePlayer = function (event) {
 	let newPos = [0, 0];
-	if (e.type == "mousemove") {
-		newPos = [event.clientX, event.clientY];
+	if (event.type == "mousemove") {
+		newPos = [event.clientX, event.clientY]
 	} else {
 		newPos = [event.touches[0].clientX, event.touches[0].clientY];
 	}
 	P.setPos(newPos);
-} */
-onmousemove = function(event){P.setPos([event.clientX, event.clientY]);};
-ontouchmove = function(event){P.setPos([event.touches[0].clientX, event.touches[0].clientY]);};
+}
+document.addEventListener('mousemove', movePlayer);
+document.addEventListener('touchmove', movePlayer);
 
 objs = [];
 let spawnID = 1, spawn = true;
