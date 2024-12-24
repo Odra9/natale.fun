@@ -3,7 +3,7 @@ onmousemove = function(event){P.setPos([event.clientX, event.clientY]);}
 
 objs = [];
 let spawnID = 1, spawn = true;
-let spawnTimeInterval = setInterval(() => { spawnID++; spawn = true}, 5000);
+let spawnTimeInterval = setInterval(() => { spawnID++; spawn = true}, 2000);
 border = 250;
 function GAMELOOP(deltaTime) {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -12,7 +12,7 @@ function GAMELOOP(deltaTime) {
 	//update objs
 	for (obj of objs) {
 		//move objs
-		obj.move();
+		obj.move(deltaTime);
 
 		//check dead
 		//check collision
@@ -38,8 +38,8 @@ function GAMELOOP(deltaTime) {
 	let E = 0;
 	let F = 0;
 	if(spawn) {
-		E = Math.floor(Math.exp(0.3*Math.sqrt(spawnID)));
-		F = Math.floor(Math.exp(0.33*Math.sqrt(spawnID)));
+		E = Math.floor(Math.exp(0.5*Math.sqrt(spawnID)));
+		F = Math.floor(Math.exp(0.55*Math.sqrt(spawnID)));
 
 		spawn = false;
 	}
@@ -78,6 +78,8 @@ function update() {
 	if (GAMELOOP(deltaTime)) {
 		time = new Date().getTime();
 		window.requestAnimationFrame(update);
+	} else {
+		alert("Hai perso :(\nIl tuo highscore è " + P.score + "\nRicarica la pagina per ricominciare");
 	}
 }
 window.requestAnimationFrame(update);

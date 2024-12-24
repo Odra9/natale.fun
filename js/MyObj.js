@@ -43,12 +43,12 @@ class MyObj2 extends MyObj {
 
         let angle = Math.random()*2*Math.PI;
         this.direction = [Math.cos(angle), Math.sin(angle)];
-        this.speed = 1;
+        this.speed = (Math.ceil(Math.random()*5)) * 0.1;
         this.isAlive = true;
     }
 
-    move() {
-        this.setPos([this.position[0] + this.speed*this.direction[0], this.position[1] + this.speed*this.direction[1]]);
+    move(delta) {
+        this.setPos([this.position[0] + delta*this.speed*this.direction[0], this.position[1] + delta*this.speed*this.direction[1]]);
     }
 }
 

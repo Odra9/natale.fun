@@ -1,13 +1,29 @@
-#SCORE {
+body {
+  background: rgb(120,120,120);
+  background: -moz-radial-gradient(circle, rgba(120,120,120,1) 0%, rgba(36,36,36,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(120,120,120,1) 0%, rgba(36,36,36,1) 100%);
+  background: radial-gradient(circle, rgba(120,120,120,1) 0%, rgba(36,36,36,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#787878",endColorstr="#242424",GradientType=1);
+
+  overflow: hidden;
+}
+
+body * {
   position: absolute;
+}
+
+#SCORE {
   top: 10px;
   left: 25px;
 }
 
-.sprite {
-  position: absolute;
+#SCORE p {
+  color: white;
+  font-family: "Roboto", serif;
+  text-shadow: 0 0 10px #FFFFFF, 7px 7px 16px #878787;
 }
 
-.sprite * {
-  position: absolute;
+#canvas {
+  border: 10px solid #E6E6E6;
+  border-radius: 20px;
 }
