@@ -63,7 +63,7 @@ function checkCollision(obj1, obj2) {
     }*/
 
     let R = Math.max(obj1.imgWidth, obj2.imgWidth, obj1.imgHeight, obj2.imgHeight)/3;
-    let distSqr = Math.pow((obj1.position[0] - obj2.position[0]), 2) + Math.pow((obj1.position[1] - obj2.position[1]), 2)
+    let distSqr = Math.pow((obj1.getImgPosX() - obj2.getImgPosX()), 2) + Math.pow((obj1.getImgPosY() - obj2.getImgPosY()), 2)
 
     return distSqr <= R*R;
 }
