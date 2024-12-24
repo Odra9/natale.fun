@@ -3,15 +3,22 @@
 	<head>
 	  <meta charset="utf-8">
 	  <title>natalo</title>
+
+	  <link rel="preload" href="./images/enemy.png" as="image">
+	  <link rel="preload" href="./images/player.png" as="image">
+	  <link rel="preload" href="./images/regularFood.png" as="image">
+	  <link rel="preload" href="./images/superFood.png" as="image">
+
 	  <link rel="stylesheet" href="style.css"></style>
 	</head>
 	<body>
 		<div id="SCORE">
 			<p>score</p>
 		</div>
-		<div id="PLAYER"></div>
-		<div id="ENEMIES"></div>
-		<div id="FOODS"></div>
+		<canvas id="canvas"></canvas>
+
+		<div class="sprites"></div>
+
 		<script src="js/Global.js"></script>
 		<script src="js/MyObj.js"></script>
 		<script src="js/Food.js"></script>

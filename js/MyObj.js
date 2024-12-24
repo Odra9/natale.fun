@@ -1,16 +1,15 @@
 class MyObj {
-    constructor(ID, imgSrc, imgWidth, imgHeight, div) {
-        this.position = [0, 0];
+    constructor(ID, imgSrc, imgWidth, imgHeight) {
+        this.position = [
+            Math.floor(Math.random()*width), 
+            Math.floor(Math.random()*height) 
+        ];
 
-        this.div = div;
         this.ID = ID;
-        this.sprite = document.createElement("img");
-        this.sprite.className = "sprite";
+        this.sprite = new Image();
         this.sprite.src = imgSrc;
-        this.sprite.id = div.id + "#" + this.ID;
         this.imgWidth = imgWidth;
         this.imgHeight = imgHeight;
-        this.div.append(this.sprite);
     }
 
     /*getCollider() {
@@ -24,20 +23,28 @@ class MyObj {
 
     setPos(pos) {
         this.position = pos;
-        this.sprite.style = "left: " + (this.position[0]-this.imgWidth/2) +
+        /* this.sprite.style = "left: " + (this.position[0]-this.imgWidth/2) +
                             "px; top: " + (this.position[1]-this.imgHeight/2) + 
                             "px; width: " + this.imgWidth +
-                            "px; height: " + this.imgHeight + "px;";
+                            "px; height: " + this.imgHeight + "px;"; */
+    }
+
+    getImgPosX() {
+        return this.position[0] - (this.imgWidth/2);
+    }
+    getImgPosY() {
+        return this.position[1] - (this.imgHeight/2);
     }
 }
 
 class MyObj2 extends MyObj {
-    constructor(ID, imgSrc, imgWidth, imgHeight, div) {
-        super(ID, imgSrc, imgWidth, imgHeight, div);
+    constructor(ID, imgSrc, imgWidth, imgHeight) {
+        super(ID, imgSrc, imgWidth, imgHeight);
 
         let angle = Math.random()*2*Math.PI;
         this.direction = [Math.cos(angle), Math.sin(angle)];
         this.speed = 1;
+        this.isAlive = true;
     }
 
     move() {

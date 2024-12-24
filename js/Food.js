@@ -1,10 +1,10 @@
 class Food extends MyObj2 {
 	constructor(objID, imgSrc, imgWidth, imgHeight) {
-		super(objID, imgSrc, imgWidth, imgHeight, foodsDiv);
+		super(objID, imgSrc, imgWidth, imgHeight);
 		this.points = 0;
     }
 
-	getScore() {
+	getPoints() {
 		return this.points;
 	}
 }
