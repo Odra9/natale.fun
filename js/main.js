@@ -1,5 +1,7 @@
 const P = new Player();
-onmousemove = function(event){P.setPos([event.clientX, event.clientY]);}
+const movePlayer = function (event) {P.setPos([event.clientX, event.clientY]);}
+onmousemove = movePlayer;
+ontouchmove = movePlayer;
 
 objs = [];
 let spawnID = 1, spawn = true;
